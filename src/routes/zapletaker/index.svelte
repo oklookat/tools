@@ -94,10 +94,12 @@
             flex-direction: column;
             gap: 24px;
             input {
+                font-size: 1rem;
                 height: 32px;
             }
             .text {
                 .example {
+                    cursor: pointer;
                     text-decoration: underline;
                 }
             }

@@ -11,6 +11,6 @@
         align-items: center;
         gap: 12px;
         height: 22px;
-        padding: 10px;
+        padding: 12px;
     }
 </style>
