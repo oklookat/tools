@@ -1,15 +1,28 @@
 <script lang="ts">
-    import "../assets/global.scss"
-import Footer from "../components/footer.svelte";
-import Header from "../components/header.svelte";
+    import "../assets/global.scss";
+    import Footer from "../components/footer.svelte";
+    import Header from "../components/header.svelte";
+    import { title } from "../utils";
 </script>
+
+<svelte:head>
+    <title>{$title}</title>
+    <meta name="author" content="oklookat" />
+    <meta name="description" content="Полезные вещи." />
+    <meta
+        property="og:description"
+        content="Полезные вещи."
+    />
+    <meta property="og:image" content="/static/ogimage.png" />
+    <meta property="og:title" content="oklookat / tools" />
+</svelte:head>
 
 <div class="bosstainer">
     <Header />
     <main class="content">
-        <slot></slot>
+        <slot />
     </main>
-    <Footer/>
+    <Footer />
 </div>
 
 <style lang="scss">

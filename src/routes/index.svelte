@@ -1,5 +1,7 @@
 <script lang="ts">
     import ToolCard from "../components/tool_card.svelte";
+    import { title } from "../utils";
+    title.set("Утилиты");
 </script>
 
 <div class="container">

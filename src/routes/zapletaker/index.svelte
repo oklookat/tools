@@ -1,7 +1,9 @@
 <script lang="ts">
-    import { randomArrayElement } from "../../utils";
+    import { randomArrayElement, title } from "../../utils";
 
     import process from "./logic";
+
+    title.set("Заплетакер");
 
     // init
     let inputVal = "";
@@ -50,16 +52,21 @@
         <div>нажми на кнопку — получишь заплетак</div>
     </div>
     <div class="main">
-        <div class="text">
-            <b
-                >Текст (например <span class="example" on:click={generateExample}
-                    >{example}</span
-                >)</b
+        <label class="text">
+            <span
+                >Текст (например <span
+                    class="example"
+                    on:click={generateExample}>{example}</span
+                >)</span
             >
-            <input type="text" bind:value={inputVal} />
-        </div>
-        <div class="madness">
-            <b>Безумие</b>
+            <input
+                type="text"
+                aria-labelledby="text__desc"
+                bind:value={inputVal}
+            />
+        </label>
+        <label class="madness">
+            <span>Безумие</span>
             <input
                 type="range"
                 min="10"
@@ -67,7 +74,7 @@
                 step="5"
                 bind:value={madness}
             />
-        </div>
+        </label>
         <div class="button" on:click={zapletak}>КНОПКА</div>
     </div>
     <div class="result">
