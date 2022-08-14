@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/tools/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="modulepreload" href="/tools/_app/immutable/start-1ae84277.js">
+	<link rel="modulepreload" href="/tools/_app/immutable/chunks/index-b1da6524.js">
+	<link rel="modulepreload" href="/tools/_app/immutable/chunks/singletons-eca981c1.js">
+	</head>
+	<body>
+		
+		<script type="module" data-sveltekit-hydrate="45h">
+		import { set_public_env, start } from "/tools/_app/immutable/start-1ae84277.js";
+
+		set_public_env({});
+
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+			paths: {"base":"/tools","assets":"/tools"},
+			session: {},
+			route: true,
+			spa: true,
+			trailing_slash: "never",
+			hydrate: null
+		});
+	</script>
+	</body>
+</html>

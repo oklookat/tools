@@ -1,0 +1,118 @@
+<script lang="ts">
+    import { randomArrayElement } from "../../utils";
+
+    import process from "./logic";
+
+    // init
+    let inputVal = "";
+    let finalVal = "";
+
+    // madness control (in percents)
+    let madness = 10;
+    $: onMadnessChanged(madness);
+    function onMadnessChanged(newVal: number) {
+        zapletak();
+    }
+
+    function zapletak(e?: MouseEvent) {
+        finalVal = process(inputVal, madness);
+    }
+
+    function onEnter(e: KeyboardEvent) {
+        if (e.key !== "Enter") {
+            return;
+        }
+        zapletak();
+    }
+
+    const examples = [
+        "Машина Форд",
+        "Миска каши",
+        "Сыр косичка",
+        "Бутылка рома",
+        "Крокодил Гена",
+        "Райан Гослинг",
+        "Наручные часы",
+        "Умный дом",
+        "Помидорный огурец",
+    ];
+    let example = randomArrayElement(examples);
+    function generateExample(e?: MouseEvent) {
+        inputVal = example;
+        zapletak();
+    }
+</script>
+
+<svelte:window on:keypress={onEnter} />
+<div class="zapletaker">
+    <div class="welcome">
+        <span class="title">Заплетакер</span>
+        <div>нажми на кнопку — получишь заплетак</div>
+    </div>
+    <div class="main">
+        <div class="text">
+            <b
+                >Текст (например <span class="example" on:click={generateExample}
+                    >{example}</span
+                >)</b
+            >
+            <input type="text" bind:value={inputVal} />
+        </div>
+        <div class="madness">
+            <b>Безумие</b>
+            <input
+                type="range"
+                min="10"
+                max="80"
+                step="5"
+                bind:value={madness}
+            />
+        </div>
+        <div class="button" on:click={zapletak}>КНОПКА</div>
+    </div>
+    <div class="result">
+        {finalVal ? finalVal : "тут будет заплетак"}
+    </div>
+</div>
+
+<style lang="scss">
+    .zapletaker {
+        max-width: 440px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .welcome {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            .title {
+                font-size: 2rem;
+            }
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            input {
+                height: 32px;
+            }
+            .text {
+                .example {
+                    text-decoration: underline;
+                }
+            }
+            .text,
+            .madness {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+        .result {
+            border: 1px solid var(--color-level-2);
+            font-size: 1.6rem;
+            border-radius: 4px;
+            padding: 12px;
+        }
+    }
+</style>

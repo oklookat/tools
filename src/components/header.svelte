@@ -1,0 +1,89 @@
+<script lang="ts">
+    import { goto } from "$app/navigation";
+
+    import { onDestroy, onMount } from "svelte";
+import { randomArrayElement } from "../utils";
+
+    let tickerEL: HTMLSpanElement;
+    let interval: NodeJS.Timer;
+    onMount(() => {
+        interval = setInterval(() => {
+            tick();
+        }, 10);
+    });
+
+    onDestroy(() => {
+        clearInterval(interval);
+    });
+
+    let coolWords = [
+        "oklookat / tools",
+        "vk.com/oklookat",
+        "я люблю свою работу",
+        "дай человеку сыр и назови его косичка",
+        "смешное слово",
+        `Uncaught TypeError: Cannot read properties of null (reading 'style')`,
+        "26 + 16 + 27",
+        "бегущий по строке",
+        "💕💕💕",
+        "чем-то похоже на майнкрафт",
+        "dQw4w9WgXcQ",
+        "мне нужно направо, буквально на 3 секунды",
+        "а ты любишь Objective-C?",
+        "text for englishmans",
+        `vscode хороший редактор кода`,
+        "это правда, я проверил...",
+    ];
+
+    let left = -150;
+    let isCooldown = false;
+    function tick() {
+        if (isCooldown) {
+            return;
+        }
+        let bodyWidth = document.body.clientWidth;
+        let tickerRect = tickerEL.getBoundingClientRect();
+        left++;
+        isCooldown = tickerRect.left > bodyWidth;
+        if (isCooldown) {
+            tickerEL.innerHTML = getRandomWord();
+            tickerRect = tickerEL.getBoundingClientRect();
+            left = -Math.abs(tickerRect.width + 4);
+            setTimeout(() => {
+                tickerEL.style.left = `${left}px`;
+                isCooldown = false;
+            }, 3000);
+            return;
+        }
+
+        tickerEL.style.left = `${left}px`;
+    }
+
+    function getRandomWord(): string {
+        return randomArrayElement(coolWords);
+    }
+</script>
+
+<header class="header" on:click={() => goto("/tools")}>
+    <span class="ticker" bind:this={tickerEL}>{getRandomWord()}</span>
+</header>
+
+<style lang="scss">
+    .header {
+        cursor: pointer;
+        overflow: hidden;
+        width: 100%;
+        height: 42px;
+        border-bottom: 2px solid var(--color-level-1);
+
+        .ticker {
+            width: max-content;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+    }
+</style>
