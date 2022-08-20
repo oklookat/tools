@@ -1,9 +1,8 @@
 <script lang="ts">
-    import { randomArrayElement, title } from "../../utils";
+    import Button from "../../components/button.svelte";
+    import { randomArrayElement } from "../../utils";
 
     import process from "./logic";
-
-    title.set("Заплетакер");
 
     // init
     let inputVal = "";
@@ -16,7 +15,7 @@
         zapletak();
     }
 
-    function zapletak(e?: MouseEvent) {
+    function zapletak() {
         finalVal = process(inputVal, madness);
     }
 
@@ -36,7 +35,7 @@
         "Райан Гослинг",
         "Наручные часы",
         "Умный дом",
-        "Помидорный огурец",
+        "Кофе вечером",
     ];
     let example = randomArrayElement(examples);
     function generateExample(e?: MouseEvent) {
@@ -46,6 +45,14 @@
 </script>
 
 <svelte:window on:keypress={onEnter} />
+<svelte:head>
+    <title>Заплетакер</title>
+    <meta
+        name="description"
+        content="Создать заплетак онлайн. Кыр сосичка!"
+    />
+</svelte:head>
+
 <div class="zapletaker">
     <div class="welcome">
         <span class="title">Заплетакер</span>
@@ -75,7 +82,7 @@
                 bind:value={madness}
             />
         </label>
-        <div class="button" on:click={zapletak}>КНОПКА</div>
+        <Button on:click={zapletak}>Сделать</Button>
     </div>
     <div class="result">
         {finalVal ? finalVal : "тут будет заплетак"}
@@ -85,6 +92,7 @@
 <style lang="scss">
     .zapletaker {
         max-width: 440px;
+        margin: auto;
         display: flex;
         flex-direction: column;
         gap: 32px;

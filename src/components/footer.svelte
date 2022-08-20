@@ -6,11 +6,13 @@
 
 <style lang="scss">
     .footer {
+        border-top: 1px solid var(--color-level-1);
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 12px;
-        height: 22px;
+        height: 64px;
         padding: 12px;
+        margin-top: auto;
     }
 </style>

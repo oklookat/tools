@@ -1,11 +1,9 @@
 import preprocess from 'svelte-preprocess';
-import adapter from "@sveltejs/adapter-static"; 
-
-const dev = "production" === "development";
+import adapter from "@sveltejs/adapter-static";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: preprocess(),
+    preprocess: preprocess(),
 
     kit: {
         adapter: adapter({
@@ -13,7 +11,7 @@ const config = {
             assets: "docs"
         }),
         paths: {
-            base: dev ? "" : "/tools",
+            base: "/tools",
         },
         prerender: {
             default: true

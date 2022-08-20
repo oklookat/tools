@@ -2,7 +2,7 @@
     import { goto } from "$app/navigation";
 
     import { onDestroy, onMount } from "svelte";
-import { randomArrayElement } from "../utils";
+    import { randomArrayElement } from "../utils";
 
     let tickerEL: HTMLSpanElement;
     let interval: NodeJS.Timer;
@@ -41,10 +41,12 @@ import { randomArrayElement } from "../utils";
         if (isCooldown) {
             return;
         }
-        let bodyWidth = document.body.clientWidth;
+        
+        const windowWidth = window.innerWidth;
         let tickerRect = tickerEL.getBoundingClientRect();
         left++;
-        isCooldown = tickerRect.left > bodyWidth;
+        isCooldown = tickerRect.left > windowWidth;
+
         if (isCooldown) {
             tickerEL.innerHTML = getRandomWord();
             tickerRect = tickerEL.getBoundingClientRect();

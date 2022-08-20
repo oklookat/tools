@@ -2,17 +2,13 @@
     import "../assets/global.scss";
     import Footer from "../components/footer.svelte";
     import Header from "../components/header.svelte";
-    import { title } from "../utils";
 </script>
 
 <svelte:head>
-    <title>{$title}</title>
+    <title>Утилиты</title>
     <meta name="author" content="oklookat" />
-    <meta name="description" content="Полезные вещи." />
-    <meta
-        property="og:description"
-        content="Полезные вещи."
-    />
+    <meta name="description" content="Утилиты: классные, прекрасные, полезные." />
+    <meta property="og:description" content="Полезные вещи." />
     <meta property="og:image" content="/static/ogimage.png" />
     <meta property="og:title" content="oklookat / tools" />
 </svelte:head>
@@ -27,13 +23,12 @@
 
 <style lang="scss">
     .bosstainer {
-        width: 100%;
         min-height: 100vh;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: max-content 1fr max-content;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
         .content {
-            margin: 12px;
+            padding: 14px;
         }
     }
 </style>

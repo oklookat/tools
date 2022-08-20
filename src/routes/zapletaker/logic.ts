@@ -58,7 +58,6 @@ export default function process(inputVal: string, madness?: number): string {
     // cursify words
     const finalWords: string[] = []
     for (let i = 0; i < words.length; i += 2) {
-        console.log(i)
         if (!words[i + 1]) {
             break
         }
@@ -76,7 +75,6 @@ function cursify(word1: Word, word2: Word): { w1: Word, w2: Word } {
     }
     const cursed1 = word2.first + word1.second
     const cursed2 = word1.first + word2.second
-    console.log(cursed1, cursed2)
     let result: { w1: Word, w2: Word } = {
         w1: new Word(cursed1),
         w2: new Word(cursed2)
