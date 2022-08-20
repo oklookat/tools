@@ -48,7 +48,8 @@
 
 <svelte:head>
     <title>Демген</title>
-    <meta name="description" content="Создать демотиватор онлайн. Не отправляет ваши фото на сервер." />
+    <meta property="og:title" content="Демген" />
+    <meta name="description" content="Создать демотиватор онлайн? Вам поможет Демген. Он не отправляет фото на сервер, и любит вас." />
 </svelte:head>
 
 {#if isAboutActive}

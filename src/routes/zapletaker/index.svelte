@@ -47,9 +47,10 @@
 <svelte:window on:keypress={onEnter} />
 <svelte:head>
     <title>Заплетакер</title>
+    <meta property="og:title" content="Заплетакер" />
     <meta
         name="description"
-        content="Создать заплетак онлайн. Кыр сосичка!"
+        content="Заплетакер позволяет легко создавать заплетаки. Кыр сосичка, миска каши - не имеет значения. Заплетакер может всё."
     />
 </svelte:head>
 

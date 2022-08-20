@@ -4,7 +4,8 @@
 
 <svelte:head>
     <title>Утилиты</title>
-    <meta name="description" content="Утилиты: классные, прекрасные, полезные." />
+    <meta property="og:title" content="Утилиты" />
+    <meta name="description" content="Полезные утилиты вам в помощь." />
 </svelte:head>
 
 <div class="container">
