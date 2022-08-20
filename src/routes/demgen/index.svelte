@@ -189,7 +189,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            width: 324px;
             height: 256px;
             padding-left: 12px;
             padding-right: 12px;

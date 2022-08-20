@@ -4,15 +4,6 @@
     import Header from "../components/header.svelte";
 </script>
 
-<svelte:head>
-    <title>Утилиты</title>
-    <meta name="author" content="oklookat" />
-    <meta name="description" content="Утилиты: классные, прекрасные, полезные." />
-    <meta property="og:description" content="Полезные вещи." />
-    <meta property="og:image" content="/static/ogimage.png" />
-    <meta property="og:title" content="oklookat / tools" />
-</svelte:head>
-
 <div class="bosstainer">
     <Header />
     <main class="content">

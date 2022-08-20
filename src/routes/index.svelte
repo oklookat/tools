@@ -2,6 +2,11 @@
     import ToolCard from "../components/tool_card.svelte";
 </script>
 
+<svelte:head>
+    <title>Утилиты</title>
+    <meta name="description" content="Утилиты: классные, прекрасные, полезные." />
+</svelte:head>
+
 <div class="container">
     <div class="todo">
         Есть идеи для прикольных штук? Пишите по ссылкам внизу!
