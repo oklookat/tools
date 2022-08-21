@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "_app/immutable/start-f24d9a80.js",
+    "file": "_app/immutable/start-b6b527b2.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -40,7 +40,7 @@
     ]
   },
   "src/routes/demgen/index.svelte": {
-    "file": "_app/immutable/pages/demgen/index.svelte-7566550b.js",
+    "file": "_app/immutable/pages/demgen/index.svelte-03c74ac7.js",
     "src": "src/routes/demgen/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -50,7 +50,7 @@
       "_index-33371697.js"
     ],
     "css": [
-      "_app/immutable/assets/index-572c9663.css"
+      "_app/immutable/assets/index-948f7348.css"
     ]
   },
   "src/routes/index.svelte": {
@@ -105,21 +105,21 @@
       "_app/immutable/assets/button-64717cd1.css"
     ]
   },
-  "src/routes/demgen/index.css": {
-    "file": "_app/immutable/assets/index-572c9663.css",
-    "src": "src/routes/demgen/index.css"
+  "src/routes/index.css": {
+    "file": "_app/immutable/assets/index-06b9bd50.css",
+    "src": "src/routes/index.css"
   },
   "button.css": {
     "file": "_app/immutable/assets/button-64717cd1.css",
     "src": "button.css"
   },
+  "src/routes/demgen/index.css": {
+    "file": "_app/immutable/assets/index-948f7348.css",
+    "src": "src/routes/demgen/index.css"
+  },
   "src/routes/zapletaker/index.css": {
     "file": "_app/immutable/assets/index-9c93fff1.css",
     "src": "src/routes/zapletaker/index.css"
-  },
-  "src/routes/index.css": {
-    "file": "_app/immutable/assets/index-06b9bd50.css",
-    "src": "src/routes/index.css"
   },
   "src/routes/__layout.css": {
     "file": "_app/immutable/assets/__layout-26896639.css",

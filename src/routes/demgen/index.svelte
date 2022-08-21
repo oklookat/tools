@@ -49,7 +49,10 @@
 <svelte:head>
     <title>Демген</title>
     <meta property="og:title" content="Демген" />
-    <meta name="description" content="Создать демотиватор онлайн? Вам поможет Демген. Он не отправляет фото на сервер, и любит вас." />
+    <meta
+        name="description"
+        content="Создать демотиватор онлайн? Вам поможет Демген. Он не отправляет фото на сервер, и любит вас."
+    />
 </svelte:head>
 
 {#if isAboutActive}
@@ -137,12 +140,16 @@
             width: 100%;
         }
         .workzone {
-            overflow: auto;
             display: flex;
             flex-direction: column;
             gap: 12px;
+            overflow: auto;
+            .drop {
+                width: fit-content;
+            }
             .constructor {
-                width: max-content;
+                width: fit-content;
+                word-break: break-word;
                 background-color: black;
                 padding-left: 48px;
                 padding-right: 48px;
@@ -179,10 +186,14 @@
 
     .image {
         border: 3px solid white;
+        width: fit-content;
+        .self,
+        .hint {
+            max-width: $max-image;
+            pointer-events: none;
+        }
         .self {
             padding: 4px;
-            pointer-events: none;
-            max-width: $max-image;
             object-fit: cover;
         }
         .hint {
@@ -190,7 +201,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 324px;
             height: 256px;
             padding-left: 12px;
             padding-right: 12px;
