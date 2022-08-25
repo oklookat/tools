@@ -30,7 +30,8 @@
             currentFile = file;
         };
         reader.onerror = () => {
-            dragHint = `ОШИБКА: ${reader.error}`
+            dragHint = `ОШИБКА: ${reader.error}`;
+            isImageDropped = false;
         };
 
         // convert file content to base64.
