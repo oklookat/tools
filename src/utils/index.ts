@@ -1,7 +1,9 @@
-export function randomArrayElement<T>(arr: T[]): T {
+/** get random array item */
+export function randomArrayItem<T>(arr: T[]): T {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+/** returns function that toggles 'no-scroll' class on body */
 export function createBodyScrollToggler(): () => void {
     let active = false
     return () => {
@@ -35,7 +37,7 @@ export function createBodyScrollToggler(): () => void {
     };
 }
 
-
+/** download file by 'a' trick */
 export function downloadFile(filename: string, base64: string) {
     const a = document.createElement('a')
     a.href = base64;
@@ -44,7 +46,7 @@ export function downloadFile(filename: string, base64: string) {
     a.remove()
 }
 
-
+/** remove extension from string (last dot + letters after, if exists) */
 export function removeExtension(filename: string): string {
     var lastDotPosition = filename.lastIndexOf(".");
     if (lastDotPosition === -1) return filename;

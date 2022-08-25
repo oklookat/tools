@@ -2,7 +2,7 @@
     import { goto } from "$app/navigation";
 
     import { onDestroy, onMount } from "svelte";
-    import { randomArrayElement } from "../utils";
+    import { randomArrayItem } from "../utils";
 
     let tickerEL: HTMLSpanElement;
     let interval: NodeJS.Timer;
@@ -48,7 +48,7 @@
         isCooldown = tickerRect.left > windowWidth;
 
         if (isCooldown) {
-            tickerEL.innerHTML = getRandomWord();
+            tickerEL.innerHTML = randomArrayItem(coolWords);
             tickerRect = tickerEL.getBoundingClientRect();
             left = -Math.abs(tickerRect.width + 4);
             setTimeout(() => {
@@ -60,14 +60,10 @@
 
         tickerEL.style.left = `${left}px`;
     }
-
-    function getRandomWord(): string {
-        return randomArrayElement(coolWords);
-    }
 </script>
 
 <header class="header" on:click={() => goto("/tools")}>
-    <span class="ticker" bind:this={tickerEL}>{getRandomWord()}</span>
+    <span class="ticker" bind:this={tickerEL}>{randomArrayItem(coolWords)}</span>
 </header>
 
 <style lang="scss">

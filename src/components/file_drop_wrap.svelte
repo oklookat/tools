@@ -18,9 +18,6 @@
     /** file input for upload */
     let inputEL: HTMLInputElement;
 
-    /** text used in upload field */
-    let hintText = "";
-
     /** drag on uploader? */
     let isDragActive = false;
 
