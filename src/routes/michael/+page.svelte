@@ -173,6 +173,8 @@
         justify-content: center;
     }
     .michael {
+        max-width: 512px;
+        margin: auto;
         display: flex;
         flex-direction: column;
         height: 100%;

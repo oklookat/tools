@@ -1,0 +1,1 @@
+import{default as e}from"../components/pages/michael/_page.svelte-87a6e7bd.js";import"./index-b86fdf0a.js";import"./about_overlay-a9401b6a.js";import"./index-8c5aca60.js";import"./button-13b94900.js";export{e as component};
