@@ -107,7 +107,7 @@
 </script>
 
 <svelte:head>
-    <title>Заплетакер</title>
+    <title>Майкл</title>
     <meta property="og:title" content="Майкл" />
     <meta
         name="description"
@@ -117,7 +117,9 @@
 
 {#if isAboutActive}
     <AboutOverlay onClose={() => (isAboutActive = false)}>
-        <div>Запись микрофона с возможностью прослушивания и сохранения аудио.</div>
+        <div>
+            Запись микрофона с возможностью прослушивания и сохранения аудио.
+        </div>
         <div><b>Сторонние библиотеки:</b></div>
         <a
             href="https://github.com/chrisguttandin/extendable-media-recorder"
