@@ -19,6 +19,7 @@
         path="zapletaker"
     />
     <ToolCard name="Демген" desc="Поможет создать демотиватор." path="demgen" />
+    <ToolCard name="Майкл" desc="Запись микрофона." path="michael" />
 </div>
 
 <style lang="scss">

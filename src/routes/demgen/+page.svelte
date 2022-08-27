@@ -2,9 +2,9 @@
     import Button from "../../components/button.svelte";
     import FileDropWrap from "../../components/file_drop_wrap.svelte";
     import { downloadFile, removeExtension } from "../../utils";
-    import Overlay from "../../components/overlay.svelte";
     // https://github.com/niklasvh/html2canvas
     import html2canvas from "html2canvas";
+    import AboutOverlay from "../../components/about_overlay.svelte";
 
     let isImageDropped = false;
     let imgSource = "";
@@ -71,32 +71,28 @@
 </svelte:head>
 
 {#if isAboutActive}
-    <Overlay onClose={() => (isAboutActive = false)}>
-        <div class="about-overlay">
-            <div>
-                Как-то раз я воспользовался онлайн конструктором демотиваторов.
-            </div>
-            <div>И знаете что?</div>
-            <div>
-                Он отправлял фотографии на сервер. Нафига, а главное зачем?
-            </div>
-            <div>
-                Вот я и написал Демгенчика - он работает только у вас в
-                браузере. Не благодарите.
-            </div>
-            <div><b>Сторонние библиотеки:</b></div>
-            <a
-                href="https://github.com/niklasvh/html2canvas"
-                style="text-decoration: underline;">html2canvas</a
-            >
+    <AboutOverlay onClose={() => (isAboutActive = false)}>
+        <div>
+            Как-то раз я воспользовался онлайн конструктором демотиваторов.
         </div>
-    </Overlay>
+        <div>И знаете что?</div>
+        <div>Он отправлял фотографии на сервер. Нафига, а главное зачем?</div>
+        <div>
+            Вот я и написал Демгенчика - он работает только у вас в браузере. Не
+            благодарите.
+        </div>
+        <div><b>Сторонние библиотеки:</b></div>
+        <a
+            href="https://github.com/niklasvh/html2canvas"
+            style="text-decoration: underline;">html2canvas</a
+        >
+    </AboutOverlay>
 {/if}
 
 <div class="demgen">
-    <div class="info">Демген v1.0</div>
+    <div class="util-title">Демген v1.0</div>
     <div
-        class="about"
+        class="underline"
         style="cursor: pointer;"
         on:click={() => (isAboutActive = true)}
     >
@@ -146,20 +142,12 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
-        .info {
-            font-size: 1.5rem;
-        }
-        .about {
-            text-decoration: underline;
-        }
         .toolbar {
             width: 100%;
         }
         .workzone {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
             overflow: auto;
+            max-width: 100%;
             .drop {
                 width: fit-content;
             }
@@ -222,22 +210,5 @@
             padding-left: 12px;
             padding-right: 12px;
         }
-    }
-
-    .about-overlay {
-        align-self: center;
-        justify-self: center;
-        background-color: var(--color-level-1);
-        border: 1px solid var(--color-level-2);
-        width: 80%;
-        max-width: 444px;
-        padding: 12px;
-        border-radius: 4px;
-        height: 40%;
-        max-height: 322px;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
     }
 </style>

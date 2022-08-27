@@ -12,7 +12,9 @@
         align-items: center;
         gap: 12px;
         height: 64px;
+        width: 100%;
         padding: 12px;
-        margin-top: auto;
+        position: fixed;
+        bottom: 0;
     }
 </style>

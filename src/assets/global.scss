@@ -32,6 +32,7 @@ body {
     background-color: var(--color-body);
     columns: var(--color-text);
     min-height: 100vh;
+    width: 100vw;
 }
 
 a {
@@ -41,4 +42,13 @@ a {
 
 .no-scroll {
     overflow: hidden;
+}
+
+.underline {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.util-title {
+    font-size: 1.5rem;
 }

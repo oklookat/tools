@@ -15,9 +15,12 @@
 <style lang="scss">
     .bosstainer {
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr max-content;
         .content {
+            width: 100vw;
             padding: 14px;
         }
     }
