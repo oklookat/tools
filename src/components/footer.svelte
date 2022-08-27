@@ -14,7 +14,5 @@
         height: 64px;
         width: 100%;
         padding: 12px;
-        position: fixed;
-        bottom: 0;
     }
 </style>
