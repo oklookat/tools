@@ -149,13 +149,15 @@
             <div class="time">{recordSecondsPretty}</div>
             <div class="controls">
                 {#if state === "inactive"}
-                    <Button on:click={rec}>Start</Button>
+                    <Button on:click={rec}>Запись</Button>
                 {:else if state === "recording"}
-                    <Button on:click={pause}>Pause</Button>
+                    <Button on:click={pause}>Пауза</Button>
                 {:else if state === "paused"}
-                    <Button on:click={resume}>Resume</Button>
+                    <Button on:click={resume}>Продолжить</Button>
                 {/if}
-                <Button on:click={stop}>Stop</Button>
+                {#if state !== "inactive"}
+                    <Button on:click={stop}>Стоп</Button>
+                {/if}
             </div>
         </div>
         {#if chunks.length > 0}
