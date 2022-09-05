@@ -1,12 +1,11 @@
 // https://github.com/chrisguttandin/extendable-media-recorder
 // https://github.com/chrisguttandin/extendable-media-recorder-wav-encoder
-import { MediaRecorder, register } from 'extendable-media-recorder';
-import { connect } from 'extendable-media-recorder-wav-encoder';
 
-async function reg() {
-    await register(await connect());
-}
-reg()
+
+// async function reg() {
+//     await register(await connect());
+// }
+// reg()
 
 export class Recorder extends MediaRecorder {
 

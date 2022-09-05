@@ -13,8 +13,8 @@ const config = {
         paths: {
             base: "/tools",
         },
-        prerender: {
-            default: true
+        serviceWorker: {
+            register: false
         }
     }
 };

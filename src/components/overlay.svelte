@@ -1,7 +1,6 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
     import { onDestroy, onMount } from "svelte";
-    import { browser } from "$app/env";
     import Portal from "@oklookat/svelte-portal";
     import { createBodyScrollToggler } from "../utils";
 
@@ -9,17 +8,11 @@
 
     let toggleScroll: () => void;
     onMount(() => {
-        if (!browser) {
-            return;
-        }
         toggleScroll = createBodyScrollToggler();
         toggleScroll();
     });
 
     onDestroy(() => {
-        if (!browser) {
-            return;
-        }
         toggleScroll();
     });
 </script>

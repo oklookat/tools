@@ -1,1 +1,0 @@
-import{default as e}from"../components/pages/demgen/_page.svelte-49f8c760.js";import"./index-b86fdf0a.js";import"./button-13b94900.js";import"./index-8c5aca60.js";import"./about_overlay-a9401b6a.js";export{e as component};
