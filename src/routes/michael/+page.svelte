@@ -2,7 +2,7 @@
     import { onMount, onDestroy } from "svelte";
     import AboutOverlay from "../../components/about_overlay.svelte";
     import Button from "../../components/button.svelte";
-    import { Recorder, getPrettySeconds } from "./logic";
+    //import { Recorder, getPrettySeconds } from "./logic";
 
     const errors = {
         active: true,
@@ -10,12 +10,13 @@
     };
 
     let mediaStream: MediaStream;
-    let recorder: Recorder;
+    let recorder: any;
     let recordSecondsPretty = "00:00";
     let state: RecordingState = "inactive";
 
     onMount(async () => {
-        await getMediaStream();
+        errors.message = "Утилита (пока) не работает."
+        //await getMediaStream();
     });
 
     onDestroy(() => {

@@ -1,12 +1,3 @@
-// https://github.com/chrisguttandin/extendable-media-recorder
-// https://github.com/chrisguttandin/extendable-media-recorder-wav-encoder
-
-
-// async function reg() {
-//     await register(await connect());
-// }
-// reg()
-
 export class Recorder extends MediaRecorder {
 
     private duration = new DurationMeter()
