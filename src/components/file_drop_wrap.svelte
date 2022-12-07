@@ -118,7 +118,7 @@
 </script>
 
 <div class="dropwrap"
-    on:click={() => onUploadClick()}
+    on:mousedown={() => onUploadClick()}
     on:dragenter={onDrag}
     on:dragleave={onDrag}
     on:drop={onDrop}

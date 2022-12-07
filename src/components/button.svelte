@@ -6,7 +6,7 @@
     export let disabled = false
 </script>
 
-<div class="button {disabled ? 'disabled' : ''}" on:click={(e) => {if(!disabled) dispatch("click", e)}}>
+<div class="button {disabled ? 'disabled' : ''}" on:mousedown={(e) => {if(!disabled) dispatch("click", e)}}>
     <slot />
 </div>
 

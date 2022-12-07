@@ -66,7 +66,7 @@
     <meta property="og:title" content="Демген" />
     <meta
         name="description"
-        content="Создать демотиватор онлайн? Вам поможет Демген. Он не отправляет фото на сервер, и любит вас."
+        content="Создать демотиватор онлайн? Демген поможет вам."
     />
 </svelte:head>
 
@@ -76,12 +76,12 @@
             Как-то раз я воспользовался онлайн конструктором демотиваторов.
         </div>
         <div>И знаете что?</div>
-        <div>Он отправлял фотографии на сервер. Нафига, а главное зачем?</div>
+        <div>Он отправлял фотографии на сервер. Это не круто.</div>
         <div>
-            Вот я и написал Демгенчика - он работает только у вас в браузере. Не
+            Вот я и написал Демген. Он работает только у вас в браузере. Не
             благодарите.
         </div>
-        <div><b>Сторонние библиотеки:</b></div>
+        <div><b>Библиотеки:</b></div>
         <a
             href="https://github.com/niklasvh/html2canvas"
             style="text-decoration: underline;">html2canvas</a
@@ -90,11 +90,10 @@
 {/if}
 
 <div class="demgen">
-    <div class="util-title">Демген v1.0</div>
     <div
         class="underline"
         style="cursor: pointer;"
-        on:click={() => (isAboutActive = true)}
+        on:mousedown={() => (isAboutActive = true)}
     >
         Об утилите
     </div>

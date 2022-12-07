@@ -15,7 +15,7 @@ function goRoute() {
 }
 </script>
 
-<div class="tool" on:click={goRoute} style="{disabled ? 'background-color: var(--color-level-1);' : ''}">
+<div class="tool" on:mousedown={goRoute} style="{disabled ? 'background-color: var(--color-level-1);' : ''}">
     <div class="name">
         {name}
     </div>

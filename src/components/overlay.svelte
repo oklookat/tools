@@ -21,7 +21,7 @@
     <div
         class="overlay"
         transition:fade={{ duration: 120 }}
-        on:click|stopPropagation|self={onClose}
+        on:mousedown={onClose}
     >
         <slot />
     </div>

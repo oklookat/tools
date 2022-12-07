@@ -123,7 +123,7 @@
 
 <div
     class="dropzone"
-    on:click={() => onUploadClick()}
+    on:mousedown={() => onUploadClick()}
     on:dragenter={onDrag}
     on:dragleave={onDrag}
     on:drop={onDrop}

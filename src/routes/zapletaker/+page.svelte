@@ -39,7 +39,7 @@
         "Кофе вечером",
     ];
     let example = randomArrayItem(examples);
-    function generateExample(e?: MouseEvent) {
+    function generateExample() {
         inputVal = example;
         zapletak();
     }
@@ -51,7 +51,7 @@
     <meta property="og:title" content="Заплетакер" />
     <meta
         name="description"
-        content="Заплетакер позволяет легко создавать заплетаки. Кыр сосичка, миска каши - не имеет значения. Заплетакер может всё."
+        content="Сыр косичка, миска каши?"
     />
 </svelte:head>
 
@@ -65,7 +65,7 @@
             <span
                 >Текст (например <span
                     class="example"
-                    on:click={generateExample}>{example}</span
+                    on:mousedown={() => generateExample()}>{example}</span
                 >)</span
             >
             <input

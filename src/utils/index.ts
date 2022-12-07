@@ -1,5 +1,5 @@
 /** get random array item */
-export function randomArrayItem<T>(arr: T[]): T {
+export function randomArrayItem<T>(arr: ArrayLike<T>): T {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
@@ -51,4 +51,24 @@ export function removeExtension(filename: string): string {
     var lastDotPosition = filename.lastIndexOf(".");
     if (lastDotPosition === -1) return filename;
     else return filename.substr(0, lastDotPosition);
+}
+
+export function fileToText(file: File): Promise<string> {
+    if (!(file instanceof File)) {
+        throw Error("Not a File")
+    }
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsText(file)
+        reader.onload = () => {
+            if (!reader.result) {
+                reject("Reader no result")
+                return
+            }
+            resolve(reader.result.toString())
+        };
+        reader.onerror = () => {
+            reject(reader.error)
+        };
+    })
 }

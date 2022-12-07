@@ -61,7 +61,7 @@
     }
 </script>
 
-<header class="header" on:click={() => goto("/tools")}>
+<header class="header" on:mousedown={() => goto("/tools")}>
     <span class="ticker" bind:this={tickerEL}>{randomArrayItem(coolWords)}</span
     >
 </header>
