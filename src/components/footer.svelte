@@ -1,6 +1,5 @@
 <footer class="footer">
     <a href="https://github.com/oklookat/tools">GitHub</a>
-    <a href="https://vk.com/oklookat">VK</a>
 </footer>
 
 <style lang="scss">
